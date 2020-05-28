@@ -59,7 +59,7 @@ static ArrayList<File> allPDFS = new ArrayList<>();
                     try {
                         PDDocument document = PDDocument.load(allPDFS.get(i));
                         PDPageTree allPages = document.getDocumentCatalog().getPages();
-                        PDPage emptyPage = new PDPage();
+                        PDPage emptyPage = new PDPage(PDPage.PAGE_SIZE_A4);
                         emptyPage.setRotation(document.getPage(i).getRotation());
                         allPages.insertAfter(emptyPage, document.getPage(0));
 
